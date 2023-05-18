@@ -2,15 +2,15 @@
 """
     This script starts a Flask web application
 """
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_world():
-    """ returns Hello HBNB! when requested """
-    return 'Hello HBNB!'
+def hello():
+    """ return a given string"""
+    return render_template("7-states_list.html")
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 5000)
+    app.run(host='0.0.0.0', port=5000)
